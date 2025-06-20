@@ -4,16 +4,16 @@
 L'idée est de placer un tableau blanc devant le robot. La caméra du robot voit le jeu et est donc capable de communiquer l'état de la partie à un algorithme (l'objet de ce repos) qui détermine le coup suivant (pas optimal pour laisser une chance à l'humain de gagner). La caméra sert aussi à mesurer la position du robot pour le contrôler en boucle fermé. Une partie mécanique permet de porter le feutre et de le faire appuyer ou non sur le tableau. Ces codes ne s'occupent que de la lecture du jeu avec la caméra. Il n'est pas fonctionnel du tout, en l'état actuel le programme ne permet même pas de déterminer la position du jeu de manière fiable.
 
 # Fonctionnement
-Un CNN trouve l'emplacement du jeu sur l'image.
+Un CNN trouve l'emplacement du jeu sur l'image. \
 Ne fonctionne vraiment pas bien. C'est ma deuxième fois avec le Deep Learning, donc je ne maitrise pas grand-chose. Je pense que passer sur un algorithme classique (avec opencv et détection d'angle, ligne, ...) serait plus pertinent. L'interprétation de l'image pour sortir l'état du jeu n'est pas fait (manque de temps). le reste du projet était réalisé par mes camarades.
 
 # Contenu
-main.py : code de construction et d'aprentissage du résaux de neuronnes
-image.tar.gz : photo du tableau pour entrainer le résaux
- |> M_n_.jpg : photos (de M0 à M98)
- |> label.json : json, pour chaque image la position du jeu (manuellement déterminée)
- |> takePic.py : code pour prendre une photo avec la webcam
- |> labelPic.py : code pour créer label.json, permet de manuellement spécifier la position du jeu sur l'image
+main.py : code de construction et d'aprentissage du résaux de neuronnes\
+image.tar.gz : photo du tableau pour entrainer le résaux\
+ |> M0.jpg à M98.jpg : photos\
+ |> label.json : json, pour chaque image la position du jeu (manuellement déterminée)\
+ |> takePic.py : code pour prendre une photo avec la webcam\
+ |> labelPic.py : code pour créer label.json, permet de manuellement spécifier la position du jeu sur l'image\
 
 # Problèmes rencontrés
 - Le tableau est brillant, reflets qui nuisent à la qualité de l'image (contraste);
@@ -23,9 +23,9 @@ image.tar.gz : photo du tableau pour entrainer le résaux
 
 # Perspectives d'évolution:
 Mieux contrôler la qualité de l'image:
-    |> focus constant
-    |> limiter les reflets (placement judicieux de la caméra et du tableau dans le robot)
-    |> utiliser des feutres neufs 
+- focus constant
+- limiter les reflets (placement judicieux de la caméra et du tableau dans le robot)
+- utiliser des feutres neufs 
 
 TODO
 - Refaire l'algorithme de détection du jeu (ROI (Region Of Interest) = le jeu seulement, ignorer le reste)- Faire un algorithme de lecture du jeu (en partant de la ROI, voir https://github.com/tempdata73/tic-tac-toe​)
